@@ -141,7 +141,8 @@ public:
         switch_state(SOLDIER_STATE_MOVE);
     }
     inline void move_by(float distance) {                   // 移动一段距离
-        this->target_point(get_point(angle(), distance));
+        auto v = get_point(angle(), distance);
+        this->target_point(v);
         switch_state(SOLDIER_STATE_MOVE);
     }
     Vec2 get_point(float angle, float distance);            // 获取相对于自身给定角度和距离处的点

@@ -110,7 +110,10 @@ endif()
 include_directories(
   /usr/local/include/GLFW
   /usr/include/GLFW
+  ${COCOS2D_ROOT}
+  ${COCOS2D_ROOT}/external
   ${COCOS2D_ROOT}/cocos
+  ${COCOS2D_ROOT}/cocos/editor-support
   ${COCOS2D_ROOT}/cocos/platform
   ${COCOS2D_ROOT}/cocos/audio/include/
   Classes
@@ -124,13 +127,52 @@ endif( WIN32 )
 
 set(GAME_SRC
   Classes/AppDelegate.cpp
-  Classes/HelloWorldScene.cpp
+  Classes/Client.cpp
+  Classes/Dialog.cpp
+  Classes/DrawNode3D.cpp
+  Classes/GameScene.cpp
+  Classes/HelpScene.cpp
+  Classes/Man2Soldier.cpp
+  Classes/ManSoldier.cpp
+  Classes/MenuScene.cpp
+  Classes/NetRoom.cpp
+  Classes/ODSocket.cpp
+  Classes/Player.cpp
+  Classes/RoleScene.cpp
+  Classes/RoomListScene.cpp
+  Classes/RoomScene.cpp
+  Classes/SceneLayer.cpp
+  Classes/SettingScene.cpp
+  Classes/Skill.cpp
+  Classes/Soldier.cpp
+  Classes/WomanSoldier.cpp
+  Classes/World.cpp
   ${PLATFORM_SPECIFIC_SRC}
 )
 
 set(GAME_HEADERS
   Classes/AppDelegate.h
-  Classes/HelloWorldScene.h
+  Classes/AppDelegate.h
+  Classes/Client.h
+  Classes/Dialog.h
+  Classes/DrawNode3D.h
+  Classes/GameScene.h
+  Classes/HelpScene.h
+  Classes/Man2Soldier.h
+  Classes/ManSoldier.h
+  Classes/MenuScene.h
+  Classes/NetRoom.h
+  Classes/ODSocket.h
+  Classes/Player.h
+  Classes/RoleScene.h
+  Classes/RoomListScene.h
+  Classes/RoomScene.h
+  Classes/SceneLayer.h
+  Classes/SettingScene.h
+  Classes/Skill.h
+  Classes/Soldier.h
+  Classes/WomanSoldier.h
+  Classes/World.h
   ${PLATFORM_SPECIFIC_HEADERS}
 )
 

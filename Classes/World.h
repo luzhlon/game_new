@@ -5,7 +5,7 @@
 
 #include "cocos2d.h"
 #include "DrawNode3D.h"
-#include "Particle3D/PU/CCPUParticleSystem3D.h"
+#include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
 
 USING_NS_CC;
 
