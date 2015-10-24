@@ -1,0 +1,14 @@
+# 第一次匹配人物文件及属性
+# 格式：人物文件名(string) scale(float) base_angle(float)
+# 格式化字符串：%s%f%f
+girl/girl.c3b 0.2 90
+# 下面的匹配人物动作
+# 格式：动作文件名 起始帧 结束帧 FPS
+# 格式化字符串：%s%f%f%f
+# 顺序（从上往下）： walk boxing kick special idle
+# file start end fps 
+girl/animate_girl_walk.c3b 30 58 30
+girl/animate_girl_boxing.c3b 53 100 50
+girl/animate_girl_kick.c3b 15 70 70
+girl/animate_girl_special.c3b 10 80 60
+girl/animate_girl_idle.c3b 0 500 50

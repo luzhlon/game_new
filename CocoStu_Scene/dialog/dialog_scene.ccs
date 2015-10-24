@@ -1,0 +1,18 @@
+<Solution>
+  <PropertyGroup Name="dialog_scene" Version="2.3.2.3" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="dialog_scene.csd" Type="Scene" />
+        <Project Name="dialog_layer.csd" Type="Layer" />
+        <Image Name="dialog_caption.png" />
+        <Image Name="btn3_normal.png" />
+        <Image Name="btn3_press.png" />
+        <Image Name="btn4_normal.png" />
+        <Image Name="btn4_press.png" />
+        <TTF Name="LiXuke_Art.ttf" />
+        <Image Name="dialog_bg.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

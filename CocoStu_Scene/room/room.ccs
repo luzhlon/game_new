@@ -1,0 +1,20 @@
+<Solution>
+  <PropertyGroup Name="room" Version="2.3.2.3" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="room_scene.csd" Type="Scene" />
+        <Project Name="room_layer.csd" Type="Layer" />
+        <Image Name="bg.png" />
+        <TTF Name="LiXuke_Art.ttf" />
+        <Image Name="bg_team.png" />
+        <Image Name="btn4_normal.png" />
+        <Image Name="btn4_press.png" />
+        <Image Name="blue.png" />
+        <Image Name="ready.png" />
+        <Image Name="red.png" />
+        <Image Name="unready.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

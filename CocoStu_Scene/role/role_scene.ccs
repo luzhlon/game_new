@@ -1,0 +1,18 @@
+<Solution>
+  <PropertyGroup Name="role_scene" Version="2.3.2.3" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="role_scene.csd" Type="Scene" />
+        <Project Name="role_layer.csd" Type="Layer" />
+        <Image Name="scene_2.png" />
+        <TTF Name="LiXuke_Art.ttf" />
+        <Image Name="btn4_normal.png" />
+        <Image Name="btn4_press.png" />
+        <Image Name="btn3_normal.png" />
+        <Image Name="btn3_press.png" />
+        <Image Name="bg4.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

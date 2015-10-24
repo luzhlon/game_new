@@ -1,0 +1,15 @@
+<Solution>
+  <PropertyGroup Name="Setting" Version="2.3.2.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="setting_layer.csd" Type="Layer" />
+        <Project Name="setting_scene.csd" Type="Scene" />
+        <Image Name="bg1.png" />
+        <Image Name="btn3_normal.png" />
+        <Image Name="btn3_press.png" />
+        <TTF Name="LiXuke_Art.ttf" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

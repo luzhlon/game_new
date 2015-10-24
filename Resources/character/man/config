@@ -1,0 +1,7 @@
+# file start end fps
+man/man.c3b 0.2 90
+man/animate_man_walk.c3b 30 58 30
+man/animate_man_boxing.c3b 25 50 20
+man/animate_man_kick.c3b 40 70 25
+man/animate_man_special.c3b 20 120 60
+man/animate_man_idle.c3b 0 1000 100

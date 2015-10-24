@@ -1,0 +1,31 @@
+<Solution>
+  <PropertyGroup Name="game_scene" Version="2.3.2.3" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="game_scene.csd" Type="Scene" />
+        <Project Name="game_layer_ui.csd" Type="Layer" />
+        <Image Name="button_normal.png" />
+        <Image Name="button_press.png" />
+        <Image Name="icon_skill_kick.png" />
+        <Image Name="icon_skill_Zhang.png" />
+        <Image Name="icon_skill_DaZhao.png" />
+        <Image Name="icon_skill_Quan.png" />
+        <Image Name="bg_loadbar2.png" />
+        <Image Name="fg_loadbar2.png" />
+        <Image Name="bg_prog1.png" />
+        <Image Name="fg_prog1.png" />
+        <Image Name="fg_prog2.png" />
+        <Image Name="bg_small_map.png" />
+        <Image Name="fg_direction.png" />
+        <Project Name="soldier_head_info.csd" Type="Node" />
+        <TTF Name="LiXuke_Art.ttf" />
+        <TTF Name="arial.ttf" />
+        <Image Name="grass.png" />
+        <Image Name="bg_loadbar1.png" />
+        <Image Name="fg_loadbar1.png" />
+        <Image Name="ico_pick_up.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

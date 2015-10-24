@@ -1,0 +1,21 @@
+<Solution>
+  <PropertyGroup Name="room_list_scene" Version="2.3.2.3" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="room_list_scene.csd" Type="Scene" />
+        <Project Name="room_list_layer.csd" Type="Layer" />
+        <Project Name="list_item.csd" Type="Layer" />
+        <Image Name="scene_2.png" />
+        <Image Name="btn1_normal.png" />
+        <Image Name="btn1_press.png" />
+        <Image Name="dialog_frame.png" />
+        <TTF Name="LiXuke_Art.ttf" />
+        <Image Name="btn4_normal.png" />
+        <Image Name="btn4_press.png" />
+        <Image Name="btn5_nomal.png" />
+        <Image Name="btn5_press.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

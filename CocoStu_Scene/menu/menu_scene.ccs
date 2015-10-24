@@ -1,0 +1,22 @@
+<Solution>
+  <PropertyGroup Name="menu_scene" Version="2.3.2.3" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="menu_scene.csd" Type="Scene" />
+        <Project Name="menu_layer.csd" Type="Layer" />
+        <Image Name="background.png" />
+        <Image Name="Back_Normal.png" />
+        <Image Name="Back_Pressed.png" />
+        <Image Name="enter_normal.png" />
+        <Image Name="enter_press.png" />
+        <Image Name="help_normal.png" />
+        <Image Name="help_press.png" />
+        <Image Name="quit_normal.png" />
+        <Image Name="quit_press.png" />
+        <Image Name="setting_normal.png" />
+        <Image Name="setting_press.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
