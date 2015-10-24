@@ -116,6 +116,7 @@ public:
     Text *name_text();
     Text *blood_dec_text();
     LoadingBar *blood_bar();
+    ImageView *blood_bar_frame();
     void add_thing(Node *);                                 // 往自身结点添加一个Node，根据自身的CameraMask
     void add2Billboard(Node *);                             // 把节点添加到Billboard
     void set_blood(float blood);                            // 设置血量，同时更新血量显示的UI

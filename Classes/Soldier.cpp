@@ -160,9 +160,9 @@ void Soldier::set_blood(float blood) {
 
     blood_bar()->setPercent(_blood / _full_blood * 100.f);
     // 血量条淡出
-    auto bar = blood_bar();
-    bar->setOpacity(255);
-    bar->runAction(FadeOut::create(1.f));
+    auto frame = blood_bar_frame();
+    frame->setOpacity(255);
+    frame->runAction(FadeOut::create(1.f));
 }
 
 void Soldier::load_ui() {
@@ -177,9 +177,8 @@ void Soldier::load_ui() {
     _billboard->setPosition3D(Vec3(0.f, 270.f, 0.f));
     add_thing(_billboard);
 
-    auto bar = blood_bar();
-    bar->setPercent(_blood * 100.f / _full_blood);
-    bar->setOpacity(255);
+    blood_bar()->setPercent(_blood * 100.f / _full_blood);
+    blood_bar_frame()->setOpacity(0);
     blood_dec_text()->setVisible(false);
 }
 
@@ -308,10 +307,16 @@ void Soldier::add2Billboard(Node *node) {
     _billboard->addChild(node);
 }
 
+ImageView *Soldier::blood_bar_frame() {
+    auto layout = static_cast<Layout *>(_billboard->getChildByTag(1));
+    auto frame = static_cast<ImageView *>(Helper::seekWidgetByName(layout, "image_blood"));
+    CC_ASSERT(frame);
+    return frame;
+}
+
 LoadingBar *Soldier::blood_bar() {
     auto layout = static_cast<Layout *>(_billboard->getChildByTag(1));
     auto bar = static_cast<LoadingBar *>(Helper::seekWidgetByName(layout, "loadbar_blood"));
-    CC_ASSERT(bar);
     return bar;
 }
 
@@ -321,38 +326,6 @@ Text *Soldier::name_text() {
     CC_ASSERT(textName);
     return textName;
 }
-/*
-Skill *Soldier::get_skill(Skill::Type type) {
-    auto skill = new Skill();
-    skill->_type = type;
-
-    switch (type) {
-    case Skill::SKILL_BOXING:
-        skill->_blood = -20.f;
-        skill->_cool_time = 3.f;
-        skill->_distance = 70.f;
-        break;
-    case Skill::SKILL_KICK:
-        skill->_blood = -30.f;
-        skill->_cool_time = 4.f;
-        skill->_distance = 60.f;
-        break;
-    case Skill::SKILL_SPECIAL:
-        skill->_blood = -50.f;
-        skill->_cool_time = 5.f;
-        skill->_distance = 50.f;
-        skill->_magic = -15.f;
-        break;
-    case Skill::SKILL_SPEED:
-        //skill->_blood = -5.f;
-        skill->_cool_time = 8.f;
-        skill->_magic = -10.f;
-        //skill->_distance = 30.f;
-        break;
-    }
-
-    return skill;
-} // */
 
 Text *Soldier::blood_dec_text() {
     auto layout = static_cast<Layout *>(_billboard->getChildByTag(1));
@@ -366,10 +339,7 @@ void Soldier::switch_state(State state) {
     case Soldier::SOLDIER_STATE_MOVE:
     {
         auto cur_pos = getPosition3D();
-        //_target_point = (*(Vec2 *)data);
         _target_angle = _target_point - Vec2(cur_pos.x, cur_pos.z);
-        //_target_point.z = (*(Vec2 *)data).y;
-        //_target_point.y = World::getInstance()->terrain()->getHeight(*(Vec2 *)data);
 
         updateRotation();
 

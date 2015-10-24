@@ -283,7 +283,7 @@ World::World() {
     {
         Terrain::DetailMap r("terrain/water.jpg"), g("terrain/grass.jpg", 10), b("terrain/road.jpg"), a("terrain/greenskin.jpg", 20);
 
-        Terrain::TerrainData data("terrain/ground.jpg", "terrain/alphamap.jpg", r, g, b, a, Size(32, 32), 330.0f, 6.f);
+        Terrain::TerrainData data("terrain/ground.jpg", "terrain/alphamap.png", r, g, b, a, Size(32, 32), 330.0f, 6.f);
         _terrain = Terrain::create(data, Terrain::CrackFixedType::SKIRT);
         _terrain->setMaxDetailMapAmount(4);
         _terrain->setDrawWire(false);
