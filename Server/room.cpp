@@ -54,7 +54,7 @@ bool Room::add(Member *meb) {
         }
     }
     //房间已经满员了
-    m_err = "room is full";
+    m_err = "没有空位置咯~~";
     return false;
 }
 
@@ -131,21 +131,31 @@ int Room::for_member_id(Member *meb) {
         }
     }
     m_err = "no this member";
+    return -1;
 }
 
 bool Room::check_team_ready() {
-    int team_red = 0;
-    int team_blue = 0;
+    int team_red = 0;  // 准备好的
+    int team_blue = 0; //
+
+    int num_red = 0;  // 红队人数
+    int num_blue = 0; // 蓝队人数
+
     for(int i = 0; i < MAX_ROOM_MEMBERS; i++) {
         auto m = m_members[i];
         if(m) {
-            if(i%2)
+            if(i%2) {
+               num_blue += 1;
                team_blue += m->get_ready();
-            else
+            } else {
+               num_red += 1;
                team_red += m->get_ready();
+            }
         }
     }
-    if(team_blue && team_red)
+    if(team_red && team_blue &&
+       team_red == num_red &&
+       team_blue == num_blue)
         return true;
     else
         return false;

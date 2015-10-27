@@ -1,4 +1,4 @@
-﻿#include "MenuScene.h"
+#include "MenuScene.h"
 #include "HelpScene.h"
 #include "SettingScene.h"
 #include "RoleScene.h"

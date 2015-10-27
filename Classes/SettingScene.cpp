@@ -1,4 +1,4 @@
-#include "SettingScene.h"
+ï»¿#include "SettingScene.h"
 #include "SimpleAudioEngine.h"
 #include "cocostudio/CocoStudio.h"
 
@@ -20,10 +20,10 @@ Scene *SettingScene::createScene() {
 
 void SettingScene::load_settings() {
     auto store = UserDefault::getInstance();
-    g_volume = store->getIntegerForKey("game_volume", 50);
-    auto str = store->getStringForKey("sever_ip", "127.0.0.1");
+    g_volume = store->getIntegerForKey("game_volume", 30);
+    auto str = store->getStringForKey("sever_ip", "121.42.53.92");
     strncpy(g_server_ip, str.c_str(), sizeof(g_server_ip));
-    // ÉèÖÃÓÎÏ·ÉùÒô´óÐ¡
+    // è®¾ç½®æ¸¸æˆå£°éŸ³å¤§å°
     g_audio->setBackgroundMusicVolume(((float)g_volume) / 100.f);
     g_audio->setEffectsVolume(((float)g_volume) / 100.f);
 }

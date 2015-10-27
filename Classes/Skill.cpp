@@ -1,4 +1,4 @@
-﻿#include "Skill.h"
+#include "Skill.h"
 #include "Soldier.h"
 #include "NetRoom.h"
 

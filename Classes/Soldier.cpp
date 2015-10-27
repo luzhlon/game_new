@@ -1,4 +1,4 @@
-﻿#include "Soldier.h"
+#include "Soldier.h"
 #include "Dialog.h"
 #include "World.h"
 #include "ManSoldier.h"

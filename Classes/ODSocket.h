@@ -1,4 +1,4 @@
-﻿/*
+/*
  * define file about portable socket class. 
  * description:this sock is suit both windows and linux
  * design:odison

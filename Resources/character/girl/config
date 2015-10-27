@@ -1,11 +1,11 @@
-# µÚÒ»´ÎÆ¥ÅäÈËÎïÎÄ¼ş¼°ÊôĞÔ
-# ¸ñÊ½£ºÈËÎïÎÄ¼şÃû(string) scale(float) base_angle(float)
-# ¸ñÊ½»¯×Ö·û´®£º%s%f%f
+# ç¬¬ä¸€æ¬¡åŒ¹é…äººç‰©æ–‡ä»¶åŠå±æ€§
+# æ ¼å¼ï¼šäººç‰©æ–‡ä»¶å(string) scale(float) base_angle(float)
+# æ ¼å¼åŒ–å­—ç¬¦ä¸²ï¼š%s%f%f
 girl/girl.c3b 0.2 90
-# ÏÂÃæµÄÆ¥ÅäÈËÎï¶¯×÷
-# ¸ñÊ½£º¶¯×÷ÎÄ¼şÃû ÆğÊ¼Ö¡ ½áÊøÖ¡ FPS
-# ¸ñÊ½»¯×Ö·û´®£º%s%f%f%f
-# Ë³Ğò£¨´ÓÉÏÍùÏÂ£©£º walk boxing kick special idle
+# ä¸‹é¢çš„åŒ¹é…äººç‰©åŠ¨ä½œ
+# æ ¼å¼ï¼šåŠ¨ä½œæ–‡ä»¶å èµ·å§‹å¸§ ç»“æŸå¸§ FPS
+# æ ¼å¼åŒ–å­—ç¬¦ä¸²ï¼š%s%f%f%f
+# é¡ºåºï¼ˆä»ä¸Šå¾€ä¸‹ï¼‰ï¼š walk boxing kick special idle
 # file start end fps 
 girl/animate_girl_walk.c3b 30 58 30
 girl/animate_girl_boxing.c3b 53 100 50

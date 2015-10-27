@@ -1,4 +1,4 @@
-﻿#include "Soldier.h"
+#include "Soldier.h"
 #include "RoomScene.h"
 #include "GameScene.h"
 #include "NetRoom.h"

@@ -1,4 +1,4 @@
-﻿#ifndef SCENELAYER_H
+#ifndef SCENELAYER_H
 #define SCENELAYER_H
 
 #include "cocos2d.h"

@@ -1,4 +1,4 @@
-﻿#include "World.h"
+#include "World.h"
 #include "DrawNode3D.h"
 #include <string>
 

@@ -1,4 +1,4 @@
-﻿#include "RoomListScene.h"
+#include "RoomListScene.h"
 #include "RoomScene.h"
 #include "GameScene.h"
 #include "Dialog.h"

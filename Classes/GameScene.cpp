@@ -1,4 +1,4 @@
-﻿#include "World.h"
+#include "World.h"
 #include "Skill.h"
 #include "Client.h"
 #include "Dialog.h"
@@ -27,7 +27,7 @@ Soldier *g_soldiers[MAX_ROOM_MEMBERS];
 
 GameScene   *GameScene::Instance = nullptr;
 Layout      *GameScene::s_layout_ui = nullptr;
-ImageView   *GameScene::s_image_direction = nullptr; // 小地图中的方向图标
+ImageView   *GameScene::s_image_direction = nullptr; // 小地图中的方向图�?
 ImageView   *GameScene::s_image_progress = nullptr; // 读条
 LoadingBar  *GameScene::s_load_progress = nullptr;
 LoadingBar  *GameScene::s_load_magic = nullptr;
@@ -109,10 +109,10 @@ SkillButton *SkillButton::SkillIt(Button *btn) {
 void SkillButton::onSkillClicked(Ref *ref) {
 
     if (g_self->death())
-        return; // 死亡状态
+        return; // 死亡状�?
 
     auto btn = static_cast<SkillButton *>(ref);
-    //技能正在冷却
+    //技能正在冷�?
     if (btn->is_cooling())
         return;
 
@@ -145,7 +145,7 @@ void SkillButton::onSkillClicked(Ref *ref) {
 
 void SkillButton::cool(float time) {
     ProgressTimer *prog = static_cast<ProgressTimer *>(this->getChildByTag(PROGRESS_TAG));
-    //判断之前是否已经设置了冷却效果
+    //判断之前是否已经设置了冷却效�?
     if (!prog) {
         prog = ProgressTimer::create(Sprite::create("image/1.png"));
         prog->setType( ProgressTimer::Type::RADIAL);
@@ -153,7 +153,7 @@ void SkillButton::cool(float time) {
         this->addChild(prog);
         prog->setAnchorPoint(Vec2(0.f, 0.f));
         prog->setPosition(0.f, 0.f);
-        prog->setScale(this->getContentSize().width / prog->getContentSize().width); //调整到和图标一样大小 
+        prog->setScale(this->getContentSize().width / prog->getContentSize().width); //调整到和图标一样大�?
     }
 
     auto to1 = Sequence::createWithTwoActions(ProgressTo::create(0, 100.f),
@@ -161,7 +161,7 @@ void SkillButton::cool(float time) {
     prog->runAction(to1);
 }
 
-//技能是否正在冷却
+//技能是否正在冷�?
 bool SkillButton::is_cooling() {
     auto prog = this->getChildByTag(PROGRESS_TAG);
     return (prog && (prog->getNumberOfRunningActions() > 0));
@@ -257,7 +257,7 @@ void GameScene::onLayerTouched(Ref *ref, Widget::TouchEventType type) {
     {
         auto pos = wig->getTouchEndPosition();
         auto delta = pos - pos_began;
-        if (delta.length() < TOUCH_IGNORE_SIZE) {  // 滑动距离小
+        if (delta.length() < TOUCH_IGNORE_SIZE) {  // 滑动距离�?
             ui2gl(pos);
             Vec3 point(pos.x, pos.y, 0.f);
             if (g_world->conv2space(point)){
@@ -269,7 +269,7 @@ void GameScene::onLayerTouched(Ref *ref, Widget::TouchEventType type) {
                 log("[World] get Space coordinate failure.");
             }
         } else {
-            // 自由视角下设置人物朝向
+            // 自由视角下设置人物朝�?
             if (g_world->getCameraMask() == World::CAMERA_FREE &&
                 g_self->state() == Soldier::SOLDIER_STATE_IDLE) {
 

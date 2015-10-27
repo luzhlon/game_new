@@ -1,4 +1,4 @@
-﻿#ifndef __SKILL_H__
+#ifndef __SKILL_H__
 #define __SKILL_H__
 
 #include "cocos2d.h"

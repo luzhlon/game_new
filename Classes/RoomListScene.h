@@ -1,4 +1,4 @@
-﻿#ifndef __ROOMLISTSCENE_H__
+#ifndef __ROOMLISTSCENE_H__
 #define __ROOMLISTSCENE_H__
 
 #include <string>

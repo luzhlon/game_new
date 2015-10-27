@@ -1,4 +1,4 @@
-﻿#include "ODSocket.h"
+#include "ODSocket.h"
 
 
 #ifdef WIN32

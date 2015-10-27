@@ -1,4 +1,4 @@
-﻿#ifndef __GAMESCENE_H__
+#ifndef __GAMESCENE_H__
 #define __GAMESCENE_H__
 
 #include "SceneLayer.h"

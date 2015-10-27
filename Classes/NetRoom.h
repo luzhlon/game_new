@@ -1,12 +1,16 @@
-﻿#include <string>
+﻿#ifndef __NETROOM_H__
+#define __NETROOM_H__
+
+#include <string>
+
 #include "cocos2d.h"
+
 #include "../Server/message.h"
 #include "Soldier.h"
 
 USING_NS_CC;
 
 struct Skill;
-
 class GoodsBase;
 
 namespace NetRoom {
@@ -43,3 +47,5 @@ namespace NetRoom {
 
     void do_skill(Skill::Type);                            // 执行某个技能
 }
+
+#endif /* __NETROOM_H__ */

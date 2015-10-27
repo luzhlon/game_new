@@ -1,15 +1,9 @@
-﻿#include "AppDelegate.h"
+#include "AppDelegate.h"
 #include "MenuScene.h"
 #include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
-
-/*
-static Size designResolutionSize = cocos2d::Size(960, 640);
-static Size smallResolutionSize = cocos2d::Size(480, 320);
-static Size mediumResolutionSize = cocos2d::Size(1024, 768);
-static Size largeResolutionSize = cocos2d::Size(2048, 1536); // */
 
 Director *      g_director;
 FileUtils *     g_file;
@@ -81,7 +75,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     auto glview = g_director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("Game");
+        glview = GLViewImpl::create("GrassWar");
         g_director->setOpenGLView(glview);
     }
 
@@ -105,24 +99,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // Set the design resolution
     glview->setDesignResolutionSize(designSize.width, designSize.height, ResolutionPolicy::EXACT_FIT);
 
-
-    /*
-    Size frameSize = glview->getFrameSize();
-    // if the frame's height is larger than the height of medium size.
-    if (frameSize.height > mediumResolutionSize.height)
-    {
-    g_director->setContentScaleFactor(MIN(largeResolutionSize.height/designResolutionSize.height, largeResolutionSize.width/designResolutionSize.width));
-    }
-    // if the frame's height is larger than the height of small size.
-    else if (frameSize.height > smallResolutionSize.height)
-    {
-    g_director->setContentScaleFactor(MIN(mediumResolutionSize.height/designResolutionSize.height, mediumResolutionSize.width/designResolutionSize.width));
-    }
-    // if the frame's height is smaller than the height of medium size.
-    else
-    {
-    g_director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
-    } // */
     {
         g_file->addSearchPath("scene/dialog_scene");
         g_file->addSearchPath("scene/menu_scene");
@@ -142,10 +118,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
         g_file->addSearchPath("sound");
     }
 
-    // Enable Remote Console
-    auto console = g_director->getConsole();
-    console->listenOnTCP(5678);
-
     // create a scene. it's an autorelease object
     g_director->runWithScene(MenuScene::createScene());
 
@@ -157,7 +129,7 @@ void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
 
     // if you use SimpleAudioEngine, it must be pause
-    // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+    SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
@@ -165,5 +137,5 @@ void AppDelegate::applicationWillEnterForeground() {
     Director::getInstance()->startAnimation();
 
     // if you use SimpleAudioEngine, it must resume here
-    // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+    SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }

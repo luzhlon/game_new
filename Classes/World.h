@@ -10,11 +10,11 @@
 USING_NS_CC;
 
 //#define VIEW_TEST
-#define MAX_POINT_NUM 20              // ×î´óµãÊı
-#define MAX_GOODS_COUNT 8             // ×î´óÎïÆ·ÊıÁ¿
-#define MAX_CAMERA_HEIGHT 300         // Camera×î´ó¸ß¶È
-#define MIN_CAMERA_HEIGHT 80          // Camera×îµÍ¸ß¶È
-#define INTERVAL_GEN_GOODS 9.f        // ²úÉúÎïÆ·µÄÊ±¼ä¼ä¸ô
+#define MAX_POINT_NUM 20              // æœ€å¤§ç‚¹æ•°
+#define MAX_GOODS_COUNT 8             // æœ€å¤§ç‰©å“æ•°é‡
+#define MAX_CAMERA_HEIGHT 300         // Cameraæœ€å¤§é«˜åº¦
+#define MIN_CAMERA_HEIGHT 80          // Cameraæœ€ä½é«˜åº¦
+#define INTERVAL_GEN_GOODS 9.f        // äº§ç”Ÿç‰©å“çš„æ—¶é—´é—´éš”
 
 class QuatNode {
 public:
@@ -23,24 +23,24 @@ public:
     QuatNode();
     QuatNode(QuatNode *parent, Vec2& d, Vec2& u);
 
-    int Parse(const char *p);          // ½âÎö°üº¬Åö×²ĞÅÏ¢µÄÎÄ¼ş
-    bool Export(char *file);           // ½«µ±Ç°Åö×²ĞÅÏ¢µ¼³öµ½ÎÄ¼ş
+    int Parse(const char *p);          // è§£æåŒ…å«ç¢°æ’ä¿¡æ¯çš„æ–‡ä»¶
+    bool Export(char *file);           // å°†å½“å‰ç¢°æ’ä¿¡æ¯å¯¼å‡ºåˆ°æ–‡ä»¶
     void Export(FILE *f);
 
-    bool Split(Vec2& sp);              // ¸ù¾İÒ»¸öµãÀ´·Ö¸îµ±Ç°ÇøÓò
-    void unSplit();                    // É¾³ı·Ö¸îÁËµÄ×ÓÇøÓò`
+    bool Split(Vec2& sp);              // æ ¹æ®ä¸€ä¸ªç‚¹æ¥åˆ†å‰²å½“å‰åŒºåŸŸ
+    void unSplit();                    // åˆ é™¤åˆ†å‰²äº†çš„å­åŒºåŸŸ`
     ~QuatNode();
 
-    QuatNode *getChild(Vec2& pos);     // µİ¹é»ñµÃ×ÓÇøÓò
-    QuatNode *getChildOnce(Vec2& pos); // ²»µİ¹é×ÓÇøÓò
-    bool contained(Vec2& pos);         // ÊÇ·ñ°üº¬¸Ãµã
-    inline bool block() {              // ÊÇ·ñÎª×èÈûÇøÓò
+    QuatNode *getChild(Vec2& pos);     // é€’å½’è·å¾—å­åŒºåŸŸ
+    QuatNode *getChildOnce(Vec2& pos); // ä¸é€’å½’å­åŒºåŸŸ
+    bool contained(Vec2& pos);         // æ˜¯å¦åŒ…å«è¯¥ç‚¹
+    inline bool block() {              // æ˜¯å¦ä¸ºé˜»å¡åŒºåŸŸ
         return _block;
     }
-    inline void block(bool b) {        // ÉèÖÃÎª(·Ç)×èÈûÇøÓò
+    inline void block(bool b) {        // è®¾ç½®ä¸º(é)é˜»å¡åŒºåŸŸ
         _block = b;
     }
-    inline bool split() {              // ÊÇ·ñÒÑ¾­·Ö¸î
+    inline bool split() {              // æ˜¯å¦å·²ç»åˆ†å‰²
         return !_split.isZero();
     }
 
@@ -97,8 +97,8 @@ class World : public Node
 {
 public:
     enum {
-        CAMERA_FREE = (int)CameraFlag::USER1,       // ×ÔÓÉÊÓ½ÇÉãÏñ»ú
-        CAMERA_FIX = (int)CameraFlag::USER2         // ¹Ì¶¨ÊÓ½ÇÉãÏñ»ú
+        CAMERA_FREE = (int)CameraFlag::USER1,       // è‡ªç”±è§†è§’æ‘„åƒæœº
+        CAMERA_FIX = (int)CameraFlag::USER2         // å›ºå®šè§†è§’æ‘„åƒæœº
     };
 
     static Vec3 s_camera_offset;
@@ -113,34 +113,34 @@ public:
     inline DrawNode3D *draw_node() {
         return _drawNode;
     }
-    Camera *camera();                                  // µ±Ç°Ïà»ú
-    void show_click(const Vec3& v);                    // ÏÔÊ¾µã»÷Ğ§¹û
+    Camera *camera();                                  // å½“å‰ç›¸æœº
+    void show_click(const Vec3& v);                    // æ˜¾ç¤ºç‚¹å‡»æ•ˆæœ
     bool conv2space(Vec3& v); //ignore v.z
     void draw_grid(float cell = 10.f,
-                   float height = 0.f);                // »­¸ñ×Ó
-    void add_skybox();                                 // Ìì¿ÕºĞ×Ó
+                   float height = 0.f);                // ç”»æ ¼å­
+    void add_skybox();                                 // å¤©ç©ºç›’å­
 
-    inline void begin_gen_goods() {                    // ¿ªÊ¼²úÉúÎïÆ·
-        // Ã¿¸ô INTERVAL_GEN_GOODS Ãë¼ì²â²¢Éú³ÉÒ»´Îgoods
+    inline void begin_gen_goods() {                    // å¼€å§‹äº§ç”Ÿç‰©å“
+        // æ¯éš” INTERVAL_GEN_GOODS ç§’æ£€æµ‹å¹¶ç”Ÿæˆä¸€æ¬¡goods
         schedule(schedule_selector(World::update_goods),
                                    INTERVAL_GEN_GOODS); 
     }
 
-    void camera_zoom(float factor);                    // ÉìËõ¾µÍ·
-    void camera_move(Vec2& factor);                    // ÒÆµ½¾µÍ·
-    void camera_follow(Node *node);                    // ¾µÍ·¸úËæNode
+    void camera_zoom(float factor);                    // ä¼¸ç¼©é•œå¤´
+    void camera_move(Vec2& factor);                    // ç§»åˆ°é•œå¤´
+    void camera_follow(Node *node);                    // é•œå¤´è·ŸéšNode
 
-    bool load_goods(char *file);                       // ¼ÓÔØÎïÆ·
-    void load_collision(char *file);                   // ¼ÓÔØÅö×²ÇøÓò
+    bool load_goods(char *file);                       // åŠ è½½ç‰©å“
+    void load_collision(char *file);                   // åŠ è½½ç¢°æ’åŒºåŸŸ
 
-    bool is_collision(Vec2 &pos);                      // Ëù¸øµãÊÇ·ñÔÚÅö×²ÇøÓò
+    bool is_collision(Vec2 &pos);                      // æ‰€ç»™ç‚¹æ˜¯å¦åœ¨ç¢°æ’åŒºåŸŸ
     inline bool is_collision(Vec3& pos) {
         Vec2 v2(pos.x, pos.z);
         return is_collision(v2);
     }
 
-    void set_position(Node*, Vec2& pos);               // ÉèÖÃÒ»¸öNodeÔÚÊÀ½çÖĞµÄÎ»ÖÃ
-    void add_thing(Node *node,                         // ÏòÊÀ½çÖĞÌí¼ÓÒ»¸öÎïÌå
+    void set_position(Node*, Vec2& pos);               // è®¾ç½®ä¸€ä¸ªNodeåœ¨ä¸–ç•Œä¸­çš„ä½ç½®
+    void add_thing(Node *node,                         // å‘ä¸–ç•Œä¸­æ·»åŠ ä¸€ä¸ªç‰©ä½“
                    float x = 0.f, float z = 0.f);
     inline void add_thing(Node *node, Vec2& pos) {
         return add_thing(node, pos.x, pos.y);
@@ -152,20 +152,20 @@ public:
         _on_gen_goods = cb;
     }
 
-    void update_goods(float dt);                       // [¶¨Ê±Æ÷]¸üĞÂÊÀ½çÖĞµÄÎïÆ·
+    void update_goods(float dt);                       // [å®šæ—¶å™¨]æ›´æ–°ä¸–ç•Œä¸­çš„ç‰©å“
 
     int goods_count();
-    void dec_goods(int index);                         // ´ÓÊÀ½çÖĞÉ¾³ıÒ»¸öÎïÆ·
-    void add_goods(GoodsBase *good);                   // ÏòÊÀ½çÖĞÌí¼ÓÒ»¸öÎïÆ·
-    bool get_goods(Vec2& pos, Goods *);                // »ñÈ¡Ö¸¶¨Î»ÖÃµÄÎïÆ·
+    void dec_goods(int index);                         // ä»ä¸–ç•Œä¸­åˆ é™¤ä¸€ä¸ªç‰©å“
+    void add_goods(GoodsBase *good);                   // å‘ä¸–ç•Œä¸­æ·»åŠ ä¸€ä¸ªç‰©å“
+    bool get_goods(Vec2& pos, Goods *);                // è·å–æŒ‡å®šä½ç½®çš„ç‰©å“
 
 private:
 	World();
 
-    Terrain *_terrain;                      // µØĞÎ
-    Camera *_camera_free;                   // ×ÔÓÉÊÓ½ÇÏà»ú
-    Camera *_camera_fix;                    // ¹Ì¶¨ÊÓ½ÇÏà»ú
-    QuatNode *_colli_root;                  // ¸ùÅö×²ÇøÓò
+    Terrain *_terrain;                      // åœ°å½¢
+    Camera *_camera_free;                   // è‡ªç”±è§†è§’ç›¸æœº
+    Camera *_camera_fix;                    // å›ºå®šè§†è§’ç›¸æœº
+    QuatNode *_colli_root;                  // æ ¹ç¢°æ’åŒºåŸŸ
 
     DrawNode3D *_drawNode;
     PUParticleSystem3D *_pu_click_point;

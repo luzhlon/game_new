@@ -1,4 +1,4 @@
-﻿#include "Player.h"
+#include "Player.h"
 #include "Client.h"
 #include "World.h"
 #include "GameScene.h"
@@ -44,10 +44,10 @@ Player::Player(Soldier *self) {
             if (end)
                 revive();
         });
-        // 掉1/3的草
+        // �?/3的草
         int lost = _soldier->grass() / 3;
         NetRoom::set_grass(_soldier->grass() - lost);
-        // 找到一个附近的人加草
+        // 找到一个附近的人加�?
         int near_id = NetRoom::get_near_enemy(60.f);
         if (near_id >= 0) {
             NetRoom::set_grass(g_soldiers[near_id]->grass() + lost, near_id);
@@ -60,7 +60,7 @@ Player::Player(Soldier *self) {
 void Player::on_skill(Skill::Type skill) {
     g_play_effect(_soldier->m_eff_aida);
     _soldier->on_skill(skill);
-    NetRoom::set_blood(_soldier->blood()); // 在房间里更新自己的血量
+    NetRoom::set_blood(_soldier->blood()); // 在房间里更新自己的血�?
 }
 
 bool Player::do_skill(Skill::Type skill) {
@@ -68,7 +68,7 @@ bool Player::do_skill(Skill::Type skill) {
     if (g_player->_magic < fabs(sk._magic))
         return false; //魔力不足
 
-    add_magic(sk._magic); // 魔力消耗
+    add_magic(sk._magic); // 魔力消�?
 
     NetRoom::do_skill(skill);
     return true;
@@ -125,7 +125,7 @@ void Player::update_per_second(float dt) {
             NetRoom::set_blood(_soldier->_blood + _soldier->_vitality); // 回血
         break;
     }
-    if (Soldier::SOLDIER_STATE_MOVE == _soldier->_state) { // 每秒同步一下位置, 
+    if (Soldier::SOLDIER_STATE_MOVE == _soldier->_state) { // 每秒同步一下位�? 
         auto p3 = _soldier->getPosition3D();
         Vec2 pos(p3.x, p3.z);
         NetRoom::set_position(pos);
@@ -151,7 +151,7 @@ void Player::on_get_goods(Goods *good) {
         break;
     case Goods::WEAPON:
         //NetRoom::set_speed(_soldier->speed() + 1);
-        // 随机给某个技能加强属性
+        // 随机给某个技能加强属�?
         // Uncomplete
         /*
         switch (random(0, 3)) {
@@ -186,10 +186,10 @@ void Player::on_pick_goods() {
 
     GameScene::Instance->begain_progress(3.f, [this](float dt, bool end) {
         if (!end) { // 读条未结束时
-            //必须处于IDLE状态
+            //必须处于IDLE状�?
             if (_soldier->state() != Soldier::SOLDIER_STATE_IDLE)
                 GameScene::Instance->break_progress();
-		} else { // 读条结束后如果pick成功，则为真正的获取到
+		} else { // 读条结束后如果pick成功，则为真正的获取�?
             if (!g_world->get_goods(s_pos, &s_good))
                 return; // pick failure
 

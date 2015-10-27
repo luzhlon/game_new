@@ -1,4 +1,4 @@
-﻿#include "Client.h"
+#include "Client.h"
 
 #define SERVER_PORT 4321
 
@@ -40,7 +40,7 @@ bool Client::connect_server() {
 
 void Client::start() {
     if(isConnected())
-        return;           // 已经连接上服务器了
+        return;           // 已经连接上服务器�?
     m_thread = new std::thread(&Client::threadRecv, this);
     m_thread->detach();
     cocos2d::Director::getInstance()->getScheduler()->schedule(
@@ -54,7 +54,7 @@ void Client::dispatchMsg(float dt) {
         s_lock = false;
         return;
     }
-    // 从消息队列前面提取消息
+    // 从消息队列前面提取消�?
     auto pkg = s_recv_list.front();
     s_recv_list.pop_front();
     s_lock = false;
